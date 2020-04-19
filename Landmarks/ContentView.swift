@@ -11,10 +11,29 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Turtle Rock")
-                .font(.title)
-            Text("Joshua Tree National Park")
-                .font(.subheadline)
+            
+            MapView()
+                .frame(height: 300)
+                .edgesIgnoringSafeArea(.top)
+            
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            VStack(alignment: .leading) {
+                Text("Turtle Rock")
+                    .font(.title)
+                HStack {
+                    Text("Joshua Tree National Park")
+                        .font(.subheadline)
+                    Spacer()
+                    Text("California")
+                        .font(.subheadline)
+                }
+            }
+            .padding()
+            
+            Spacer()
         }
     }
 }
